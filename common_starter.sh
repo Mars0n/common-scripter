@@ -29,7 +29,7 @@ css/
 stylesheets/
 bower_components/
 
-.sass_cache
+.sass-cache
 .DS_Store
 Gemfile
 Gemfile.lock
