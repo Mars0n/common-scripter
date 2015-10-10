@@ -23,7 +23,7 @@ $project_name/$setting_name.py
 run.sh
 shell.sh
 dbshell.sh
-db.sqlit3
+db.sqlite3
 
 css/
 stylesheets/
