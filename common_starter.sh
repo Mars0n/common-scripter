@@ -12,30 +12,12 @@ echo python manage.py dbshell --settings=$project_name.$setting_name > dbshell.s
 # Execute mode on files
 chmod +x run.sh shell.sh dbshell.sh
 
-#Create a .gitignore file in a superior directory for common django project
-cat <<EOF>> ../.gitignore
-*.pyc
-*.swn
-*.swo
-*.swp
 
-$project_name/$setting_name.py
-run.sh
-shell.sh
-dbshell.sh
-db.sqlite3
+# Ask about creating a .gitignore file 
+read -r -p "Create .gitignore file? [y/N]: " ifyesno
 
-css/
-stylesheets/
-bower_components/
-
-.sass-cache
-.DS_Store
-Gemfile
-Gemfile.lock
-EOF
-
-
-
-
+if [[ $ifyesno =~ ^([yY][eE][sS]|[yY])$ ]]
+then
+    source ignore_creator.sh
+fi
 
