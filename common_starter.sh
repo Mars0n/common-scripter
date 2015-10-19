@@ -13,11 +13,17 @@ echo python manage.py dbshell --settings=$project_name.$setting_name > dbshell.s
 chmod +x run.sh shell.sh dbshell.sh
 
 
+
 # Ask about creating a .gitignore file 
 read -r -p "Create .gitignore file? [y/N]: " ifyesno
-
 if [[ $ifyesno =~ ^([yY][eE][sS]|[yY])$ ]]
 then
     source ignore_creator.sh
 fi
 
+# Ask about creating a requirements file 
+read -r -p "Create requirements file? [y/N]: " ifyesno
+if [[ $ifyesno =~ ^([yY][eE][sS]|[yY])$ ]]
+then
+    source requirements_creator.sh
+fi
