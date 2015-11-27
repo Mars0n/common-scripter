@@ -12,6 +12,13 @@ echo python manage.py dbshell --settings=$project_name.$setting_name > dbshell.s
 # Execute mode on files
 chmod +x run.sh shell.sh dbshell.sh
 
+# Ask about create a python manage migrate script
+read -r -p "Create migrate script? [y/N]: " ifyesno
+if [[ $ifyesno =~ ^([yY][eE][sS]|[yY])$ ]]
+then
+    echo python manage.py migrate --settings=$project_name.$setting_name > migrate.sh
+    chmod +x migrate.sh
+fi
 
 
 # Ask about creating a .gitignore file 
