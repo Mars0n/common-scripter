@@ -12,6 +12,7 @@ run.sh
 shell.sh
 dbshell.sh
 db.sqlite3
+migrate.sh
 
 css/
 stylesheets/
